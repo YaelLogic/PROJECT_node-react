@@ -21,10 +21,6 @@ const createPost = async (req, res) => {
 //read
 const getAllPosts = async (req, res) => {
     const posts = await Posts.find().lean()
-
-    if (!posts[0])
-        return res.status(401).json({ massage: "There is no posts" })
-    else
         return res.status(201).json(posts)
 }
 

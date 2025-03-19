@@ -21,10 +21,6 @@ const createTodo = async (req, res) => {
 //read
 const getAllTodos = async (req, res) => {
     const todos = await Todos.find().lean()
-
-    if (!todos[0])
-        return res.status(401).json({ massage: "There is no todos" })
-    else
         return res.status(201).json(todos)
 }
 

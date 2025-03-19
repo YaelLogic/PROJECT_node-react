@@ -25,10 +25,6 @@ const createUser = async (req, res) => {
 //read
 const getAllUsers = async (req, res) => {
     const users = await Users.find().lean()
-
-    if (!users[0])
-        return res.status(401).json({ massage: "There is no users" })
-    else
         return res.status(201).json(users)
 }
 
